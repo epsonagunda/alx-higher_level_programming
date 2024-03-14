@@ -1,0 +1,34 @@
+$ pycodestyle --first optparse.py
+optparse.py:69:11: E401 multiple imports on one line
+optparse.py:77:1: E302 expected 2 blank lines, found 1
+optparse.py:88:5: E301 expected 1 blank line, found 0
+optparse.py:347:31: E211 whitespace before '('
+optparse.py:357:17: E201 whitespace after '{'
+optparse.py:472:29: E221 multiple spaces before operator
+
+
+
+
+$ pycodestyle --show-source --show-pep8 testing/data/E40.py
+testing/data/E40.py:2:10: E401 multiple imports on one line
+import os, sys
+         ^
+    Imports should usually be on separate lines.
+
+    Okay: import os\nimport sys
+    E401: import sys, os
+       
+
+
+
+$ pycodestyle --statistics -qq Python-2.5/Lib
+232     E201 whitespace after '['
+599     E202 whitespace before ')'
+631     E203 whitespace before ','
+842     E211 whitespace before '('
+2531    E221 multiple spaces before operator
+4473    E301 expected 1 blank line, found 0
+4006    E302 expected 2 blank lines, found 1
+165     E303 too many blank lines (4)
+325     E401 multiple imports on one line
+3615    E501 line too long (82 characters)
