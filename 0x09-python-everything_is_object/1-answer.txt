@@ -1,0 +1,3 @@
+#function to get the memory address of an object we use id
+
+id
