@@ -12,7 +12,7 @@ My name is Epson Onyango Agunda
 
 3) say my name with space
 >>> say_my_name("Epson")
-My name is epson 
+My name is Epson 
 
 4) Error with integers for say my name
 >>> say_my_name(1, "me")

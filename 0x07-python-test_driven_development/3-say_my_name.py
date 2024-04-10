@@ -1,9 +1,18 @@
 #!/usr/bin/python3
-""" function that prints My name """
+"""
+say_my_name - a function that prints My name.
+"""
+
 
 def say_my_name(first_name, last_name=""):
-    if not isinstance(first_name, str):
+    """
+    Says your name.
+    first_name and last_name must be strings otherwise, will raise a TypeError
+    """
+    # first_name must be an integer
+    if type(first_name) is not str:
         raise TypeError("first_name must be a string")
-    if not isinstance(last_name, str):
+    # last_name must be an integer
+    if type(last_name) is not str:
         raise TypeError("last_name must be a string")
     print("My name is {:s} {:s}".format(first_name, last_name))
