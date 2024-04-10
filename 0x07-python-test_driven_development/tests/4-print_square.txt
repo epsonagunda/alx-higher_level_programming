@@ -1,39 +1,47 @@
+1) Import file
 >>> print_square = __import__('4-print_square').print_square
 
->>> print_square(3)
-xxx
-xxx
-xxx
+2) Print a square with 4 * 4 "#"
+>>> print_square(4)
+####
+####
+####
+####
+
+3) Print the empty line
+>>> print_square(0)
+
+4) print one per one #
 
 >>> print_square(1)
-x
+#
 
->>> print_square(2)
-xx
-xx
+5) size cant be negative
 
 >>> print_square(-1)
 Traceback (most recent call last):
+	  ...
 ValueError: size must be >= 0
 
->>> print_square("idk")
+6) Square cant be a string
+
+>>> print_square("string")
 Traceback (most recent call last):
+	  ...
 TypeError: size must be an integer
 
->>> print_square(4.0)
+7) square has to print something
+>>> print_square(None)
 Traceback (most recent call last):
+	  ...
 TypeError: size must be an integer
 
->>> print_square('42')
+8) boolean test for simbol #
+>>> print_square(True)
+#
+
+9) sizze cant be negative and fille it with "0"
+>>> print_square(-1.0)
 Traceback (most recent call last):
+	  ...
 TypeError: size must be an integer
-
->>> print_square()
-Traceback (most recent call last):
-TypeError: print_square() missing 1 required positional argument: 'size'
-
->>> print_square(1, 2)
-Traceback (most recent call last):
-TypeError: print_square() takes 1 positional argument but 2 were given
-
->>> print_square(0)
