@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""defining write_file with two arguments"""
 def write_file(filename="", text=""):
     """ function that writes a string to a text file (UTF8)  """
 
