@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""define save_to_json_file function"""
 import json
 
 

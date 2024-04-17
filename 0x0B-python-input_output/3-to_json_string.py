@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""defining to_json_strin function"""
 
 import json
 

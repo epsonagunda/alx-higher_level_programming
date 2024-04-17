@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""a script that adds all arguments to a Python list"""
 import sys
 import json
 
