@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""define pascal_triangle"""
 def pascal_triangle(n):
     """ Pascal Triangle 1h"""
     li = []

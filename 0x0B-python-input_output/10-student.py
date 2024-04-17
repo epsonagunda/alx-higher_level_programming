@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""define to_json"""
 class Student:
     def __init__(self, first_name, last_name, age):
         """ Constructor """
