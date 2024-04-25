@@ -18,42 +18,72 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """
+        width
+        """
         return self.__width
 
     @width.setter
     def width(self, value):
+        """
+        width.setter
+        """
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise valueError("width must be > 0 ")
         self.__width = value
 
     @property
     def height(self):
+        """
+        height
+        """
         return self.__height
 
     @height.setter
     def height(self, value):
+        """
+        height.setter
+        """
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise valueError("height must be > 0 ")
         self.__height = value
 
     @property
     def x(self):
+        """
+        x
+        """
         return self.__x
 
     @x.setter
     def x(self, value):
+        """
+        x.setter
+        """
+        if not isinstance(value, int):
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise valueError("x must be >= 0 ")
         self.__x = value
 
     @property
     def y(self):
+        """
+        y
+        """
         return self.__y
 
     @y.setter
     def y(self, value):
+        """
+        y.setter
+        """
+        if not isinstance(value, int):
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise valueError("y must be >= 0 ")
         self.__y = value
-if __name__ == "_main_":
-
-    r1 = Rectangle(10, 2)
-    print(r1.id)
-
-    r2 = Rectangle(2, 10)
-    print(r2.id)
-
-    r3 = Rectangle(10, 2, 0, 0, 12)
-    print(r3.id)
