@@ -43,10 +43,12 @@ class TestBase(unittest.TestCase):
     def test_D_constructor_args_2(self):
         '''Tests constructor signature with 2 notself args.'''
         with self.assertRaises(TypeError) as e:
-            Base.__init__(self, 1, 2)
-        msg = "__init__() takes from 1 to 2 positional arguments but 3 \
-were given"
-        self.assertEqual(str(e.exception), msg)
+            Base(1, 2)
+            expected_msg = "__init__() takes from 1 to 2 positional arguments but 3 were given"
+            actual_msg = str(e.exception)
+            print("Expected:", expected_msg)
+            print("Actual:", actual_msg)
+            self.assertEqual(actual_msg, expected_msg)
 
     def test_E_consecutive_ids(self):
         '''Tests consecutive ids.'''
@@ -90,8 +92,7 @@ were given"
         '''Tests to_json_string() signature:'''
         with self.assertRaises(TypeError) as e:
             Base.to_json_string()
-        s = "to_json_string() missing 1 required positional argument: \
-'list_dictionaries'"
+        s = "to_json_string() missing 1 required positional argument: 'list_dictionaries'"
         self.assertEqual(str(e.exception), s)
 
         self.assertEqual(Base.to_json_string(None), "[]")
@@ -162,15 +163,14 @@ were given"
         '''Tests to_json_string() signature:'''
         with self.assertRaises(TypeError) as e:
             Base.from_json_string()
-        s = "from_json_string() missing 1 required positional argument: \
-'json_string'"
-        self.assertEqual(str(e.exception), s)
+        s = "from_json_string() missing 1 required positional argument: 'json_string'"
+        self.assertEqual(s, str(e.exception))
 
         self.assertEqual(Base.from_json_string(None), [])
         self.assertEqual(Base.from_json_string(""), [])
 
         s = '[{"x": 1, "y": 2, "width": 3, "id": 4, "height": 5}, \
-{"x": 101, "y": 20123, "width": 312321, "id": 522244, "height": 34340}]'
+          {"x": 101, "y": 20123, "width": 312321, "id": 522244, "height": 34340}]'
         d = [{'x': 1, 'y': 2, 'width': 3, 'id': 4, 'height': 5},
              {'x': 101, 'y': 20123, 'width': 312321, 'id': 522244,
              'height': 34340}]
@@ -198,7 +198,7 @@ were given"
         d = [{'x': 101, 'y': 20123, 'width': 312321, 'id': 522244,
              'height': 34340}]
         s = '[{"x": 101, "y": 20123, "width": 312321, "id": 522244, \
-"height": 34340}]'
+             "height": 34340}]'
         self.assertEqual(Base.from_json_string(s), d)
 
         list_in = [
